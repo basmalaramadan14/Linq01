@@ -13,6 +13,8 @@ namespace Assignment
         static void Main(string[] args)
         
         {
+            string[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry", "Kiwi" };
+
             #region Q01
             //var seafoodProducts = Source.ProductList
             //    .Where(p => p.Category == "Seafood");
@@ -145,19 +147,27 @@ namespace Assignment
             #endregion
 
             #region Q12
-            string[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
+            //string[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
 
-            var result = Arr
-                .OrderBy(w => w.Length)
-                .ThenBy(w => w.ToLower());
+            //var result = Arr
+            //    .OrderBy(w => w.Length)
+            //    .ThenBy(w => w.ToLower());
 
-            foreach (var word in result)
-            {
-                Console.WriteLine(word);
-            }
+            //foreach (var word in result)
+            //{
+            //    Console.WriteLine(word);
+            //}
             #endregion
 
             #region Q13
+            var result = Arr
+    .Where(w => w.Length > 1 && w[1] == 'i')
+    .Reverse();
+
+            foreach (var item in result)
+            {
+                Console.WriteLine(item);
+            }
             #endregion
         }
 
