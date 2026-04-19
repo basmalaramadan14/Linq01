@@ -53,13 +53,49 @@ namespace Assignment
 
 
             #region Q05
-    //        var result = Source.ProductList
-    //.Where(p => p.UnitsInStock > 0 && p.Category == "Condiments");
+            //        var result = Source.ProductList
+            //.Where(p => p.UnitsInStock > 0 && p.Category == "Condiments");
 
-    //        foreach (var p in result)
-    //        {
-    //            Console.WriteLine($"{p.ProductName} - {p.UnitPrice}");
-    //        }
+            //        foreach (var p in result)
+            //        {
+            //            Console.WriteLine($"{p.ProductName} - {p.UnitPrice}");
+            //        }
+            #endregion
+
+            #region Q06 
+            var result = Source.ProductList
+    .Select(p => new
+    {
+        Name = p.ProductName,
+        Price = p.UnitPrice,
+        StockStatus = p.UnitsInStock > 0 ? "Available" : "Out of Stock"
+    });
+
+            foreach (var item in result)
+            {
+                Console.WriteLine($"{item.Name} - {item.Price} - {item.StockStatus}");
+            }
+            #endregion
+
+            #region Q07
+            #endregion
+
+            #region Q08
+            #endregion
+
+            #region Q09
+            #endregion
+
+            #region Q10
+            #endregion
+
+            #region Q11
+            #endregion
+
+            #region Q12
+            #endregion
+
+            #region Q13
             #endregion
         }
 
