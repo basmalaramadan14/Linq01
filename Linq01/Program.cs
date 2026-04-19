@@ -103,17 +103,31 @@ namespace Assignment
             #endregion
 
             #region Q09
-            var result = Source.ProductList
-    .Where(p => p.Category == "Beverages")
-    .OrderByDescending(p => p.UnitsInStock);
+            //        var result = Source.ProductList
+            //.Where(p => p.Category == "Beverages")
+            //.OrderByDescending(p => p.UnitsInStock);
 
-            foreach (var p in result)
-            {
-                Console.WriteLine($"{p.ProductName} - {p.UnitsInStock}");
-            }
+            //        foreach (var p in result)
+            //        {
+            //            Console.WriteLine($"{p.ProductName} - {p.UnitsInStock}");
+            //        }
             #endregion
 
             #region Q10
+            var result =
+    from c in Source.CustomerList
+    from o in c.Orders
+    where o.OrderDate.Year >= 1997
+    select new
+    {
+        c.CustomerID,
+        o.OrderDate
+    };
+
+            foreach (var item in result)
+            {
+                Console.WriteLine($"{item.CustomerID} - {item.OrderDate:d}");
+            }
             #endregion
 
             #region Q11
