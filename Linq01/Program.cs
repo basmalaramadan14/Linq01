@@ -114,23 +114,34 @@ namespace Assignment
             #endregion
 
             #region Q10
-            var result =
-    from c in Source.CustomerList
-    from o in c.Orders
-    where o.OrderDate.Year >= 1997
-    select new
-    {
-        c.CustomerID,
-        o.OrderDate
-    };
+            //        var result =
+            //from c in Source.CustomerList
+            //from o in c.Orders
+            //where o.OrderDate.Year >= 1997
+            //select new
+            //{
+            //    c.CustomerID,
+            //    o.OrderDate
+            //};
 
-            foreach (var item in result)
-            {
-                Console.WriteLine($"{item.CustomerID} - {item.OrderDate:d}");
-            }
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine($"{item.CustomerID} - {item.OrderDate:d}");
+            //}
             #endregion
 
             #region Q11
+            var result = Source.ProductList
+    .Select((p, index) => new
+    {
+        Index = index + 1,
+        Name = p.ProductName
+    });
+
+            foreach (var item in result)
+            {
+                Console.WriteLine($"{item.Index}. {item.Name}");
+            }
             #endregion
 
             #region Q12
