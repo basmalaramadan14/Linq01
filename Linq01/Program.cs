@@ -32,19 +32,28 @@ namespace Assignment
             //        }
             #endregion
             #region Q03
-            var sortedProducts = Source.ProductList
-    .OrderBy(p => p.UnitPrice);
+            //        var sortedProducts = Source.ProductList
+            //.OrderBy(p => p.UnitPrice);
 
-            foreach (var p in sortedProducts)
-            {
-                Console.WriteLine($"{p.ProductName} - {p.UnitPrice}");
-            }
+            //        foreach (var p in sortedProducts)
+            //        {
+            //            Console.WriteLine($"{p.ProductName} - {p.UnitPrice}");
+            //        }
             #endregion
 
             #region Q04
-            #endregion 
+            //        var filteredProducts = Source.ProductList
+            //.Where(p => p.UnitPrice >= 10 && p.UnitPrice <= 30);
+
+            //        foreach (var p in filteredProducts)
+            //        {
+            //            Console.WriteLine($"{p.ProductName} - {p.UnitPrice}");
+            //        }
+            #endregion
+
 
             #region Q05
+        
             #endregion
         }
 
