@@ -23,13 +23,28 @@ namespace Assignment
             //}
             #endregion
             #region Q02 
-            var productNames = Source.ProductList
-    .Select(p => p.ProductName);
+            //        var productNames = Source.ProductList
+            //.Select(p => p.ProductName);
 
-            foreach (var name in productNames)
+            //        foreach (var name in productNames)
+            //        {
+            //            Console.WriteLine(name);
+            //        }
+            #endregion
+            #region Q03
+            var sortedProducts = Source.ProductList
+    .OrderBy(p => p.UnitPrice);
+
+            foreach (var p in sortedProducts)
             {
-                Console.WriteLine(name);
+                Console.WriteLine($"{p.ProductName} - {p.UnitPrice}");
             }
+            #endregion
+
+            #region Q04
+            #endregion 
+
+            #region Q05
             #endregion
         }
 
