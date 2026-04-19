@@ -131,20 +131,30 @@ namespace Assignment
             #endregion
 
             #region Q11
-            var result = Source.ProductList
-    .Select((p, index) => new
-    {
-        Index = index + 1,
-        Name = p.ProductName
-    });
+            //        var result = Source.ProductList
+            //.Select((p, index) => new
+            //{
+            //    Index = index + 1,
+            //    Name = p.ProductName
+            //});
 
-            foreach (var item in result)
-            {
-                Console.WriteLine($"{item.Index}. {item.Name}");
-            }
+            //        foreach (var item in result)
+            //        {
+            //            Console.WriteLine($"{item.Index}. {item.Name}");
+            //        }
             #endregion
 
             #region Q12
+            string[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
+
+            var result = Arr
+                .OrderBy(w => w.Length)
+                .ThenBy(w => w.ToLower());
+
+            foreach (var word in result)
+            {
+                Console.WriteLine(word);
+            }
             #endregion
 
             #region Q13
