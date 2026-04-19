@@ -53,7 +53,13 @@ namespace Assignment
 
 
             #region Q05
-        
+    //        var result = Source.ProductList
+    //.Where(p => p.UnitsInStock > 0 && p.Category == "Condiments");
+
+    //        foreach (var p in result)
+    //        {
+    //            Console.WriteLine($"{p.ProductName} - {p.UnitPrice}");
+    //        }
             #endregion
         }
 
