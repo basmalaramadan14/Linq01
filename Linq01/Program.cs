@@ -78,20 +78,28 @@ namespace Assignment
             #endregion
 
             #region Q07 
-            var result = Source.ProductList
-    .Select((p, index) => new
-    {
-        Index = index + 1,
-        Name = p.ProductName
-    });
+            //        var result = Source.ProductList
+            //.Select((p, index) => new
+            //{
+            //    Index = index + 1,
+            //    Name = p.ProductName
+            //});
 
-            foreach (var item in result)
-            {
-                Console.WriteLine($"{item.Index}. {item.Name}");
-            }
+            //        foreach (var item in result)
+            //        {
+            //            Console.WriteLine($"{item.Index}. {item.Name}");
+            //        }
             #endregion
 
             #region Q08
+            var result = Source.ProductList
+    .OrderBy(p => p.Category)
+    .ThenByDescending(p => p.UnitPrice);
+
+            foreach (var p in result)
+            {
+                Console.WriteLine($"{p.Category} - {p.ProductName} - {p.UnitPrice}");
+            }
             #endregion
 
             #region Q09
