@@ -63,21 +63,32 @@ namespace Assignment
             #endregion
 
             #region Q06 
+            //        var result = Source.ProductList
+            //.Select(p => new
+            //{
+            //    Name = p.ProductName,
+            //    Price = p.UnitPrice,
+            //    StockStatus = p.UnitsInStock > 0 ? "Available" : "Out of Stock"
+            //});
+
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine($"{item.Name} - {item.Price} - {item.StockStatus}");
+            //}
+            #endregion
+
+            #region Q07 
             var result = Source.ProductList
-    .Select(p => new
+    .Select((p, index) => new
     {
-        Name = p.ProductName,
-        Price = p.UnitPrice,
-        StockStatus = p.UnitsInStock > 0 ? "Available" : "Out of Stock"
+        Index = index + 1,
+        Name = p.ProductName
     });
 
             foreach (var item in result)
             {
-                Console.WriteLine($"{item.Name} - {item.Price} - {item.StockStatus}");
+                Console.WriteLine($"{item.Index}. {item.Name}");
             }
-            #endregion
-
-            #region Q07
             #endregion
 
             #region Q08
