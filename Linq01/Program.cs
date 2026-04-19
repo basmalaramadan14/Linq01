@@ -92,17 +92,25 @@ namespace Assignment
             #endregion
 
             #region Q08
-            var result = Source.ProductList
-    .OrderBy(p => p.Category)
-    .ThenByDescending(p => p.UnitPrice);
+            //        var result = Source.ProductList
+            //.OrderBy(p => p.Category)
+            //.ThenByDescending(p => p.UnitPrice);
 
-            foreach (var p in result)
-            {
-                Console.WriteLine($"{p.Category} - {p.ProductName} - {p.UnitPrice}");
-            }
+            //        foreach (var p in result)
+            //        {
+            //            Console.WriteLine($"{p.Category} - {p.ProductName} - {p.UnitPrice}");
+            //        }
             #endregion
 
             #region Q09
+            var result = Source.ProductList
+    .Where(p => p.Category == "Beverages")
+    .OrderByDescending(p => p.UnitsInStock);
+
+            foreach (var p in result)
+            {
+                Console.WriteLine($"{p.ProductName} - {p.UnitsInStock}");
+            }
             #endregion
 
             #region Q10
